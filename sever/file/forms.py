@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import User, Video
 
 class UserModelForm(forms.ModelForm):
     password1 = forms.CharField(label='비밀번호', max_length=80, widget=forms.PasswordInput)
@@ -27,3 +27,8 @@ class UserModelForm(forms.ModelForm):
         
         return user
     
+
+class Video_form(forms.ModelForm):
+    class Meta:
+        model = Video
+        fields = ['video_file','uploaded_at']

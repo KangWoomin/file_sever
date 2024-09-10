@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{%block title%} api {%endblock%}
+
+{%block content%}
+    
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{ form.as_p }}
+            <button>upload</button>
+        </form>
+
+    </div>
+
+{%endblock%}
