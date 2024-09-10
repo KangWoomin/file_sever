@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{%block title%}Uploaded Videos{%endblock%}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Uploaded At</th>
+            <th>Video</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for video in videos %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ video.uploaded_at|date:"Y-m-d H:i:s" }}</td>
+            <td>
+                <a href="{{ video.video_file.url }}" target="_blank">Watch Video</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No videos uploaded yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{%endblock%}

@@ -148,3 +148,8 @@ def save_video(frames):
     with open(filname, 'rb') as f:
         video.video_file.save(file_path, ContentFile(f.read()))
     video.save()
+
+
+def video_list(request):
+    videos = Video.objects.all().order_by('-uploaded_at')
+    return render(request,'video_list.html',{'videos':videos})
