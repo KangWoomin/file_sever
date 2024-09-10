@@ -21,6 +21,7 @@ def create_user(request):
     return render(request,'create_user.html',{'form':form})
 
 from django.contrib.auth import authenticate
+
 def user_login(request):
     if request.method == 'POST':
         userID = request.POST.get('userID')
@@ -32,8 +33,10 @@ def user_login(request):
             login(request, user)
             return redirect('action')
         else:
-            return render(request,'login.html',{'error':'접근 불가'})
-    
+            content = {
+                'error':'로그인에 실패 하였습니다.'
+            }
+            return render(request,'login.html',content)
         
     return render(request ,'login.html' )
 

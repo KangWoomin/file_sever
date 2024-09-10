@@ -125,7 +125,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'file.User'
 
-LOGIN_TIMEOUT = 1800
+SESSION_COOKIE_AGES = 1800
 
 import os
 MEDIA_URL = '/media/'

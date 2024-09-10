@@ -19,6 +19,9 @@
         <button>로그인</button>
     </form>
 
-
-
+    {% if error %}
+        <script>
+            alert('{{error}}')
+        </script>
+    {% endif %}
 {% endblock%}
