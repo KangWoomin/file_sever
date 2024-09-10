@@ -33,7 +33,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser):
     userID = models.CharField(verbose_name='ID', max_length=80, unique=True)
     team = models.CharField(verbose_name='TeamName', max_length=50)
-    email = models.EmailField(verbose_name='email', max_length=80, unique=True, blank=True)
+    email = models.EmailField(verbose_name='email', max_length=80, blank=True)
     birth = models.DateField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)

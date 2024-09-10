@@ -18,11 +18,12 @@ class UserModelForm(forms.ModelForm):
         
         return password2
     
-    def user_save(self, commit=True):
+    def save(self, commit=True):
         user = super().save(commit=False)
-        user = self.cleaned_data.get('password1')
+        user.set_password(self.cleaned_data.get('password1'))
         
         if commit:
             user.save()
         
         return user
+    
