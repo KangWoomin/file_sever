@@ -30,7 +30,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('main')
+            return redirect('action')
         else:
             return render(request,'login.html',{'error':'접근 불가'})
     
@@ -40,3 +40,9 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('main')
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def action(request):
+    return render(request, 'action.html')
