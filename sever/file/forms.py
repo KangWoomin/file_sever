@@ -31,4 +31,4 @@ class UserModelForm(forms.ModelForm):
 class Video_form(forms.ModelForm):
     class Meta:
         model = Video
-        fields = ['video_file','uploaded_at']
+        fields = ['video_file']
