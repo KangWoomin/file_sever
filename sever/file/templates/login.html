@@ -4,21 +4,24 @@
 
    
 
-
-    <form method="POST">
-        {% csrf_token %}
-        {% if errors %}    
-            <p style="color: red;">{{errors}}</p>
-        {% endif %}
-        <label for="userID">ID: </label>
-        <input type="text" id="userID" name="userID">
-        <br>
-        <label for="password">password: </label>
-        <input type="password" id="password" name="password">
-        <br>
-        <button>로그인</button>
-    </form>
-
+    <div class="form-container">
+        <form method="POST" class="form">
+            {% csrf_token %}
+            {% if errors %}    
+                <p style="color: red;">{{errors}}</p>
+            {% endif %}
+            <div class="form-group">
+                <label for="userID">ID: </label>
+                <input type="text" id="userID" name="userID">
+                <br>
+                <label for="password">password: </label>
+                <input type="password" id="password" name="password">
+                <br>
+                <br>
+                <button>로그인</button>
+            </div>
+        </form>
+    </div>
     {% if error %}
         <script>
             alert('{{error}}')

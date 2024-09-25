@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko-kr">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
     {% block head %} {% endblock %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
     <style>
         .top{
             position:fixed;
@@ -29,6 +31,8 @@
         .content{
             margin-top: 10%;
         }
+
+        
     </style>
 </head>
 <body>
